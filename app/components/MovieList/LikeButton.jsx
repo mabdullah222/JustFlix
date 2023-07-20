@@ -11,7 +11,7 @@ function LikeButton({element,user}) {
   const favourite=useMemo(()=>{
     const ids=favourites.map(e=>e.id)
     return ids.includes(element.id)
-  },[favourites])
+  },[favourites,element.id])
 
 
   const handleUpdateFavourite=async ()=>{

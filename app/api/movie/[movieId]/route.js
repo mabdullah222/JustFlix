@@ -9,7 +9,6 @@ export async function GET(request,{params:{movieId}}){
         return new NextResponse(JSON.stringify({movie:movie}),{status:200})
     }
     catch(error){
-        console.log(error.message)
         return new NextResponse(JSON.stringify({message:error.message}),{status:400})
     }
 }

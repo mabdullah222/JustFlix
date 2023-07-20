@@ -14,7 +14,6 @@ export async function POST(request){
         return new NextResponse(JSON.stringify({message:"Movie added to favourites"}),{status:200})
     }
     catch(error){
-        console.log(error.message)
         return new NextResponse(JSON.stringify({message:error.message}),{status:400})
     }
 }
@@ -35,7 +34,6 @@ export async function DELETE(request){
         return new NextResponse(JSON.stringify({data:[]}),{status:200})
     }
     catch(error){
-        console.log(error.message)
         return new NextResponse(JSON.stringify({message:"Couldn't remove the movie from favourites"}),{status:400})
     }
 }   

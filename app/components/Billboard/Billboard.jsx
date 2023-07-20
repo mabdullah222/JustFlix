@@ -12,10 +12,7 @@ function Billboard() {
 
   const fetchMovie=async ()=>{
     const res=await fetch('http://localhost:3000/api/random',{next:{revalidate:10}})
-    if (!res.ok){
-        console.log("Error")
-    }
-    else{
+    if (res.ok){
         const jres=await res.json()
         setData(jres.movie)
     }

@@ -10,7 +10,9 @@ function FavouriteList({title,user}) {
     const getFavourites=async ()=>{
         const response=await fetch(`http://localhost:3000/api/favourite/${user}`)
         const jres=await response.json()
-        dispatch(setFavourites(jres.movies))
+        if (jres.movies!=undefined){
+            dispatch(setFavourites(jres.movies))
+        }
         }
         
     useEffect(()=>{
